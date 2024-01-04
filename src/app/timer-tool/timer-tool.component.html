@@ -1,0 +1,8 @@
+<div [ngClass]="{'timer-active': timerState === 'active', 'timer-paused': timerState === 'paused'}">
+  <h2>Timer Tool</h2>
+  <div >{{ timer }}</div>
+  <button *ngIf="!isStartButtonDisabled" (click)="startTimer()">Start</button>
+  <button *ngIf="timerInterval && timerState === 'active'" (click)="pauseTimer()">Pause</button>
+  <button *ngIf="timerInterval && timerState === 'paused'" (click)="resumeTimer()">Resume</button>
+  <button (click)="resetTimer()">Reset</button>
+</div>
